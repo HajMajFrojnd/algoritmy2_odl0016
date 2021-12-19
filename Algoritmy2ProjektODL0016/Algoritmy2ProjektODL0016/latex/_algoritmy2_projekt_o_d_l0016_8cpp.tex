@@ -1,0 +1,83 @@
+\hypertarget{_algoritmy2_projekt_o_d_l0016_8cpp}{}\doxysection{Algoritmy2\+Projekt\+ODL0016.\+cpp File Reference}
+\label{_algoritmy2_projekt_o_d_l0016_8cpp}\index{Algoritmy2ProjektODL0016.cpp@{Algoritmy2ProjektODL0016.cpp}}
+{\ttfamily \#include $<$iostream$>$}\newline
+{\ttfamily \#include $<$fstream$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{_algoritmy2_projekt_o_d_l0016_8cpp_a606d789c35cc3462217ec6d6a97607db}{get\+Max}} (int a, int b)
+\item 
+vector$<$ int $>$ \mbox{\hyperlink{_algoritmy2_projekt_o_d_l0016_8cpp_a0d495b9841ed486000dadd58f58cda41}{read\+From\+File}} (string s)
+\item 
+int \mbox{\hyperlink{_algoritmy2_projekt_o_d_l0016_8cpp_ae29a5e1130c23890f9be43dee9f8367f}{get\+Max\+Area\+Histogram}} (vector$<$ int $>$ x)
+\item 
+int \mbox{\hyperlink{_algoritmy2_projekt_o_d_l0016_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main}} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{_algoritmy2_projekt_o_d_l0016_8cpp_a606d789c35cc3462217ec6d6a97607db}\label{_algoritmy2_projekt_o_d_l0016_8cpp_a606d789c35cc3462217ec6d6a97607db}} 
+\index{Algoritmy2ProjektODL0016.cpp@{Algoritmy2ProjektODL0016.cpp}!getMax@{getMax}}
+\index{getMax@{getMax}!Algoritmy2ProjektODL0016.cpp@{Algoritmy2ProjektODL0016.cpp}}
+\doxysubsubsection{\texorpdfstring{getMax()}{getMax()}}
+{\footnotesize\ttfamily int get\+Max (\begin{DoxyParamCaption}\item[{int}]{a,  }\item[{int}]{b }\end{DoxyParamCaption})}
+
+pomocná funkce, která vrací větší z dvou hodnot 
+\begin{DoxyParams}{Parameters}
+{\em a} & Integer k porovnání \\
+\hline
+{\em b} & Integer k porovnání \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Větší číslo 
+\end{DoxyReturn}
+\mbox{\Hypertarget{_algoritmy2_projekt_o_d_l0016_8cpp_ae29a5e1130c23890f9be43dee9f8367f}\label{_algoritmy2_projekt_o_d_l0016_8cpp_ae29a5e1130c23890f9be43dee9f8367f}} 
+\index{Algoritmy2ProjektODL0016.cpp@{Algoritmy2ProjektODL0016.cpp}!getMaxAreaHistogram@{getMaxAreaHistogram}}
+\index{getMaxAreaHistogram@{getMaxAreaHistogram}!Algoritmy2ProjektODL0016.cpp@{Algoritmy2ProjektODL0016.cpp}}
+\doxysubsubsection{\texorpdfstring{getMaxAreaHistogram()}{getMaxAreaHistogram()}}
+{\footnotesize\ttfamily int get\+Max\+Area\+Histogram (\begin{DoxyParamCaption}\item[{vector$<$ int $>$}]{x }\end{DoxyParamCaption})}
+
+Hlavní funkce celého algoritmu 
+\begin{DoxyParams}{Parameters}
+{\em x} & Vektor intů, ze kterého vypočítáme největší vepsaný obdelník v histogramu \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Největší vepsaný obdelník z histogramu 
+\end{DoxyReturn}
+získáme nejvyšší číslo z vektoru
+
+když je největší číslo 0, tak žádný obdelník není
+
+kdyby všechny čísla v histogramu byly 1, tak největší vepsaný obdelník je jeho šířka, v tomto případě velikost vektoru, protože všechny hodnoty mají šířku 1
+
+inkrementujeme v jaké jsme výšce (top je nejvyšší)
+
+postupně procházíme vektor
+
+když hodnota na pozici vektoru je větší nebo rovna momentální výšce, pro kterou počítáme plochu, tak je souvislá a přičteme momentální výšku k temporary ploše
+
+když hodnota na pozici vektoru je menší než momentální výška, tak nám končí momentální souvislost v histogramu, porovnáme, zda doposud souvislá plocha je vetší, než plocha kterou máme momentálně uloženou v area, jestli je, tak ji uložíme do area, temp area vynulujeme
+
+zbylé iterace mohly být souvislé a tak jsme se nedostali do else, proto uložíme do area vetší hodnotu a vynulujeme temporary area\mbox{\Hypertarget{_algoritmy2_projekt_o_d_l0016_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}\label{_algoritmy2_projekt_o_d_l0016_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}} 
+\index{Algoritmy2ProjektODL0016.cpp@{Algoritmy2ProjektODL0016.cpp}!main@{main}}
+\index{main@{main}!Algoritmy2ProjektODL0016.cpp@{Algoritmy2ProjektODL0016.cpp}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Funkce Main, akorát se volají funkce a vypisují se do příkazové řádky \mbox{\Hypertarget{_algoritmy2_projekt_o_d_l0016_8cpp_a0d495b9841ed486000dadd58f58cda41}\label{_algoritmy2_projekt_o_d_l0016_8cpp_a0d495b9841ed486000dadd58f58cda41}} 
+\index{Algoritmy2ProjektODL0016.cpp@{Algoritmy2ProjektODL0016.cpp}!readFromFile@{readFromFile}}
+\index{readFromFile@{readFromFile}!Algoritmy2ProjektODL0016.cpp@{Algoritmy2ProjektODL0016.cpp}}
+\doxysubsubsection{\texorpdfstring{readFromFile()}{readFromFile()}}
+{\footnotesize\ttfamily vector$<$int$>$ read\+From\+File (\begin{DoxyParamCaption}\item[{string}]{s }\end{DoxyParamCaption})}
+
+Pomocná funkce pro načtení čísel ze souboru 
+\begin{DoxyParams}{Parameters}
+{\em s} & String cesty k souboru \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Vektor intů načtených ze souboru 
+\end{DoxyReturn}
